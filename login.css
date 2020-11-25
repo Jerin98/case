@@ -10,7 +10,7 @@ body{
  height: 100%;
 }
 form{
-    margin-left: 35%;
+    margin-left: 30%;
     margin-top: 10%;
 }
 nav{
@@ -21,8 +21,8 @@ nav{
   .text-center{
     font-family: sans-serif;
   }
-  .parent{
-    margin-left: 35%;
+  #parent{
+    margin-left: 34%;
     height: 380px;
     width: 400px;
     margin-top: 50px;
