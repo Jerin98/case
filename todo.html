@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO LIST</title>
+  <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function noBack(){window.history.forward()}
+      noBack();
+      window.onload=noBack;
+      window.onpageshow=function(evt){if(evt.persisted)noBack()}
+      window.onunload=function(){void(0)}
+      </script>
+<body style="background-color: rgb(165, 150, 120)">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="navbar-collapse collapse show" id="navbarNavDropdown" onsubmit="return checkSelect()" >
+        <div class="col-md-5"></div>
+      
+          <ul class="navbar-nav ">
+            <li class="nav-item  "  >
+              <a class="nav-link active "  href="#"style="color: white; ">TODO LIST </a>
+            
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active" href="index.html"style="color: white;">LOGOUT</a>
+            </li>
+  </nav>
+  <div id="container demo text-center">
+    <br>
+      <h1 class="text1 text-center pt-2 " style=" color: rgb(25, 40, 226); text-transform: uppercase;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; "> <u> MY To-Do list</u></h1>
+      <br>
+     <br>
+    </div>
+    <div class="container ">
+      <ul class="container list-group "  style="font-size: 20px; width: 100%; list-style-type:none ;font-family: sans-serif; " id="todo">
+      
+    </div>
+        <br>
+        <br> 
+    <script src="todo.js"></script>
+   
+      <!-- list -->
+       <script>
+        $.getJSON('https://jsonplaceholder.typicode.com/todos', function(data) {
+        
+            for(var i=0;i<=40;i++){
+              if(data[i].completed==false){
+                var check = `<li><input type="checkbox" class="list" onclick="checkSelect()" /> ${data[i].title}</li>`
+                $("#todo").append(check);}
+              
+              else{
+                var check =`<li><input type="checkbox" class="text-muted" disabled checked onclick="checkSelect()"/> ${data[i].title}</li>`
+                $("#todo").append(check);}
+               }
+        });
+        </script>
+</body>
+</html>
+
+  
