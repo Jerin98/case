@@ -14,20 +14,10 @@ form{
   
     margin-top: 10%;
 }
-nav{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
+
  
 
   .text-center{
     font-family: sans-serif;
-  }
-  .container{
-    
-    height: 380px;
-    width: 300px;
-    margin-top: 50px;
-    border-radius: 5px solid red;
-    box-shadow: 0 0 10px blue;
   }
   
